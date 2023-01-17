@@ -4,7 +4,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Master ma = new Master();
+		CustomerMethods ma = new CustomerMethods();
 		while(true) {
 			System.out.println("1. 메뉴 제시 및 주문 받기");
 			System.out.println("2. 김밥 재료 구성");
