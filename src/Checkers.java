@@ -17,4 +17,10 @@ public class Checkers {
 		
 		}else {return false;}
 	}
+	
+	public boolean orderContinueCheck(String orderCONT) {
+		if(orderCONT == "Y" || orderCONT == "N" ){
+			return true;
+		}else {return false;}
+	}
 }

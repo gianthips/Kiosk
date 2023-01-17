@@ -18,8 +18,8 @@ public class Application {
 			
 			switch(no) {
 				case "1": 
-					ma.menuNotice(); //메뉴 노티스					
-					ma.OrderCheck(); //주문 받아서, 주문 체크 후 저장.
+					ma.menuNotice(); //메뉴 노티스
+					ma.orderCheckandMake(); //주문 받아서, 주문 체크 후 저장.
 					
 					
 					
