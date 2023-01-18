@@ -2,6 +2,7 @@
 public class Orders {
 
 	int menuNum;
+	String menuName;
 	int orderNum;
 	int orderFinishNum;//주문의 끝
 	
@@ -19,18 +20,11 @@ public class Orders {
 		this.orderFinishNum = orderFinishNum; 
 	}
 	
-	public String orderClassification(int menuNum) {
-		String menuname;
-
-		if(menuNum==1) {
-			menuname = "야채김밥";			
-		}else if(menuNum==2){
-			menuname = "김치김밥";
-		}else if(menuNum==3){
-			menuname = "참치김밥";
-		}else {
-			menuname = "참치김치김밥";
-		}
-		return menuname;
+	public Orders(int menuNum, String menuName, int orderNum, int orderFinishNum) {
+		this.menuNum = menuNum;
+		this.menuName = menuName;
+		this.orderNum = orderNum;		
+		this.orderFinishNum = orderFinishNum; 
 	}
+	
 }
