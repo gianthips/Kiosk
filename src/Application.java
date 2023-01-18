@@ -4,7 +4,10 @@ public class Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Orders[] table = {};
 		CustomerMethods ma = new CustomerMethods();
+		
 		while(true) {
 			System.out.println("1. 메뉴 제시 및 주문 받기");
 			System.out.println("2. 김밥 재료 구성");
@@ -18,19 +21,19 @@ public class Application {
 			
 			switch(no) {
 				case "1": 
-					ma.menuNotice(); //메뉴 노티스
+					ma.menuNotice(); //메뉴 노티스									
+					
+					// 얘네들을 계속 돌려야 함
 					ma.orderCheckandMake(); //주문 받아서, 주문 체크 후 저장.
+					ma.orderTabling(null, null);
+					//
 					
 					
 					
-				case "2": 
-					ma.orderTotalSpecies();
-					ma.orderSpecies();
-					ma.orderAmount();
-					ma.calculator();
-					ma.ordercomp();
-		
-				case "9": System.out.println("프로그램을 종료합니다."); return;
+					
+					
+					
+				case "5": System.out.println("프로그램을 종료합니다."); return;
 				default : System.out.println("잘못된 번호를 선택하셨습니다."); break;
 			}
 			

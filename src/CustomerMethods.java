@@ -4,7 +4,7 @@ import java.math.*;
 
 public class CustomerMethods {
 	
-	public void menuNotice() {
+	public void menuNotice() {    
 		
 		System.out.println("====메뉴====");
 		System.out.println("1. 야채김밥");
@@ -16,7 +16,7 @@ public class CustomerMethods {
 		
 	}
 	
-	public Orders orderCheckandMake() {		
+	public Orders orderCheckandMake() {		//order 한 줄을 만드는 코드
 		
 		int q_menuNum = 0; //주문 번호가 제대로 입력되었는지 여부를 따지는 index. 0이면 잘못 입력.
 		int q_orderNum = 0; //주문 수량이 제대로 입력되었는지 여부를 따지는 index. 0이면 잘못 입력.
@@ -58,8 +58,7 @@ public class CustomerMethods {
 				orderFinishNum=1;
 			}else {
 				orderFinishNum=0;				
-			}
-			
+			}			
 		}else{
 			System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
 			orderFinishNum = 0;			
@@ -68,10 +67,22 @@ public class CustomerMethods {
 		return new Orders(menuNum, orderNum, orderFinishNum);
 	}
 	
-	public Orders[] orderTabling() {
-		Orders[] orderTable;
+	public Orders[] orderTabling(Orders[] table, Orders newOrder) {//table 작성. array가 0부터 시작하는 것을 고려하여 섬세하게 해야된다.
 		
-	}
-	
+		int i = table.length;
+		Orders[] newtable;
+		//깊은 복사
+		if(i==0) {			
+			newtable = new Orders[1];
+			newtable[1] = newOrder;		
+		}else {
+			newtable = new Orders[i+1];			
+			for(int j=0;j<i;j++) {
+			newtable[j]=table[j];	
+			}			
+			newtable[i+1] = newOrder;			
+		}		
+		return newtable;		
+	}		
 }
 	

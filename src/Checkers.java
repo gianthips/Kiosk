@@ -18,7 +18,7 @@ public class Checkers {
 		}else {return false;}
 	}
 	
-	public boolean orderContinueCheck(String orderCONT) {
+	public boolean orderContinueCheck(String orderCONT) {//주문을 계속할지에 대한 입력이 제대로 들어왔는지 체크
 		if(orderCONT == "Y" || orderCONT == "N" ){
 			return true;
 		}else {return false;}

@@ -20,7 +20,7 @@ public class Orders {
 	}
 	
 	public String orderClassification(int menuNum) {
-		String menuname = "";
+		String menuname;
 
 		if(menuNum==1) {
 			menuname = "야채김밥";			
