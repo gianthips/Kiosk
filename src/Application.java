@@ -9,11 +9,11 @@ public class Application {
 		
 		MasterMethods mm = new MasterMethods();
 		
-		Recipe[] rcinit = mm.RecipeTableInitial();
-		Recipe[] rcbefore = rcinit.clone();
+		Recipe[] rcinit = mm.RecipeTableInitial(); // 레시피 초기화
+		Recipe[] rcbefore = rcinit.clone(); // 초기화 한 것을 레시피 변경전 정보로 저장해둠.
 		
-		Price priceinit = new Price();
-		Price pricebefore = new Price(priceinit);		
+		Price priceinit = new Price(); // 가격 초기화
+		Price pricebefore = new Price(priceinit);//복사생성자를 만들어 변경전 가격으로 저장해둠.		
 		
 		while(true) {
 			System.out.println("====================");
@@ -100,7 +100,7 @@ public class Application {
 					
 				case "3": 
 					/*테스트코드*/
-					System.out.println(pricebefore.laverP + "," + pricebefore.carrotP);
+					System.out.println(pricebefore.laverP + "," + pricebefore.hamP+ "," + pricebefore.carrotP);
 					/*테스트코드*/
 					
 					Price pricetemp = new Price(pricebefore);
@@ -108,8 +108,7 @@ public class Application {
 					
 
 					/*테스트코드*/
-					System.out.println(pricetemp.laverP + "," + pricetemp.carrotP);
-					System.out.println(pricebefore.laverP + "," + pricebefore.carrotP);
+					System.out.println(pricebefore.laverP + "," + pricebefore.hamP+ "," + pricebefore.carrotP);
 					/*테스트코드*/
 					
 					break;			

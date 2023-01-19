@@ -357,7 +357,7 @@ public class MasterMethods {
 //		double dakuangP=0; double sesameoilP=0; double vinegarP=0; double sesameP=0;
 //		double kimchiP=0; double tunaP=0; double mayoP=0;
 		
-		Price pricetemp = Price(pricebefore);
+		Price pricetemp = new Price(pricebefore);
 		
 		Scanner sc = new Scanner(System.in);
 		Checkers ch = new Checkers();
@@ -367,6 +367,8 @@ public class MasterMethods {
 		int q_priceModifierEach = 0;
 				
 		while(q_priceModifierTotal==0) {
+			
+			pricetemp = new Price(pricetemp);
 			
 			System.out.println("====================");
 			System.out.println("수정코자 하는 재료를 선택해주세요.");
@@ -385,55 +387,84 @@ public class MasterMethods {
 					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
 					q_modiMenuNum = 0;
 				}
-			}
+			}//한번체크해주고
 			
 			switch(modiMenuNum) {
 			case "1":
+				q_priceModifierEach=0;
+//				//테스트
+//				System.out.println("하하 case1에서 " + pricetemp.laverP);
 				System.out.println("김의 가격을 입력해주세요.: ");
+//				System.out.println("q_priceModifierEach: "+q_priceModifierEach);
 				laverSP = sc.next();
 				while(q_priceModifierEach==0) {
 					if(ch.StringNumCheck(laverSP)) {
 						pricetemp.laverP = Double.parseDouble(laverSP);
+//						//테스트
+//						System.out.println("호호 case1에서 " + pricetemp.laverP);
 						q_priceModifierEach=1;
 					}else {
 						System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
+				//원래 여기에 q_priceModifierEach=0;이 있었는데 그러면 이후의 case 2,3,4에서 q_priceModifierEach가 1로 잡혔음.
+//				//테스트
+//				System.out.println("case1에서 " + pricetemp.laverP);
+//				System.out.println("case1에서 " + pricetemp.hamP);
+//				System.out.println("case1에서 " + pricetemp.carrotP);
 				break;
 
 			case "2":
+				q_priceModifierEach=0;
+//				//테스트
+//				System.out.println("하하 case2에서 " + pricetemp.hamP);
 				System.out.println("햄의 가격을 입력해주세요.: ");
+//				System.out.println("q_priceModifierEach: "+q_priceModifierEach);
 				hamSP = sc.next();
 				while(q_priceModifierEach==0) {
 					if(ch.StringNumCheck(hamSP)) {
 						pricetemp.hamP = Double.parseDouble(hamSP);
+//						//테스트
+//						System.out.println("호호 case2에서 " + pricetemp.hamP);
 						q_priceModifierEach=1;
 					}else {
 						System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
+//				//테스트
+//				System.out.println("case2에서 " + pricetemp.laverP);
+//				System.out.println("case2에서 " + pricetemp.hamP);
+//				System.out.println("case2에서 " + pricetemp.carrotP);
 				break;
 
-			case "3":		
+			case "3":	
+				q_priceModifierEach=0;
+//				//테스트
+//				System.out.println("하하 case3에서 " + pricetemp.carrotP);
 				System.out.println("당근의 가격을 입력해주세요.: ");
+//				System.out.println("q_priceModifierEach: "+q_priceModifierEach);
 				carrotSP = sc.next();
 				while(q_priceModifierEach==0) {
 					if(ch.StringNumCheck(carrotSP)) {
 						pricetemp.carrotP = Double.parseDouble(carrotSP);
+//						//테스트
+//						System.out.println("호호 case3에서 " + pricetemp.carrotP);
 						q_priceModifierEach=1;
 					}else {
 						System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
+//				//테스트
+//				System.out.println("case3에서 " + pricetemp.laverP);
+//				System.out.println("case3에서 " + pricetemp.hamP);
+//				System.out.println("case3에서 " + pricetemp.carrotP);
 				break;
 
 			case "4":
+				q_priceModifierEach=0;
 				System.out.println("시금치의 가격을 입력해주세요.: ");
 				spinachSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -445,10 +476,10 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;
 
 			case "5":
+				q_priceModifierEach=0;
 				System.out.println("단무지의 가격을 입력해주세요.: ");
 				dakuangSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -460,10 +491,10 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;				
 
 			case "6":
+				q_priceModifierEach=0;
 				System.out.println("참기름의 가격을 입력해주세요.: ");
 				sesameoilSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -475,10 +506,10 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;
 
 			case "7":
+				q_priceModifierEach=0;
 				System.out.println("식초의 가격을 입력해주세요.: ");
 				vinegarSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -490,10 +521,10 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;
 
 			case "8":
+				q_priceModifierEach=0;
 				System.out.println("참깨의 가격을 입력해주세요.: ");
 				sesameSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -505,10 +536,10 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;
 
 			case "9":
+				q_priceModifierEach=0;
 				System.out.println("김치의 가격을 입력해주세요.: ");
 				kimchiSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -520,10 +551,10 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;
 				
 			case "10":
+				q_priceModifierEach=0;
 				System.out.println("참치의 가격을 입력해주세요.: ");
 				tunaSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -535,10 +566,10 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;
 
 			case "11":
+				q_priceModifierEach=0;
 				System.out.println("마요네즈의 가격을 입력해주세요.: ");
 				mayoSP = sc.next();
 				while(q_priceModifierEach==0) {
@@ -550,7 +581,6 @@ public class MasterMethods {
 						q_priceModifierEach=0;
 					}					
 				}
-				q_priceModifierEach=0;
 				break;
 
 			case "12":
@@ -558,6 +588,7 @@ public class MasterMethods {
 				break;
 				
 			}
+				q_priceModifierEach=0;
 				while((!modiMenuNum.equals("12")) && q_priceModifierEach==0) {
 					System.out.println("추가로 다른 재료의 가격 변경을 원하십니까? Y/N" );
 					String yesOrNo = sc.next();
@@ -573,13 +604,9 @@ public class MasterMethods {
 						q_priceModifierEach = 0;
 						q_priceModifierTotal = 0;
 					}
-				}		
-			
-		}		
-		return new Price(pricetemp.laverP, pricetemp.hamP, pricetemp.carrotP, pricetemp.spinachP,
-					pricetemp.dakuangP, pricetemp.sesameoilP, pricetemp.vinegarP, pricetemp.sesameP,
-					pricetemp.kimchiP, pricetemp.tunaP, pricetemp.mayoP);
-	}
-	
-	
+				}					
+		}
+		
+		return new Price(pricetemp);
+	}	
 }
