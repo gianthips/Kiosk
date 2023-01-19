@@ -8,8 +8,12 @@ public class Application {
 		Orders[] orderTableSave = {};
 		
 		MasterMethods mm = new MasterMethods();
+		
 		Recipe[] rcinit = mm.RecipeTableInitial();
 		Recipe[] rcbefore = rcinit.clone();
+		
+		Price priceinit = new Price();
+		Price pricebefore = new Price(priceinit);		
 		
 		while(true) {
 			System.out.println("====================");
@@ -45,7 +49,6 @@ public class Application {
 					System.out.println(orderTableSave[0].menuName);
 					System.out.println(orderTableSave[1].menuName);
 					System.out.println(orderTableSave[2].menuName);
-
 					/*테스트코드*/
 					
 					break;
@@ -67,9 +70,21 @@ public class Application {
 					/*테스트코드*/
 					
 					Recipe[] rctemp = rcbefore.clone();
-					rcbefore = mm.RecipeModifier(rctemp);
 					
 					/*테스트코드*/
+					System.out.println(rctemp[0].laverspecies);
+					System.out.println(rctemp[0].laver);
+					System.out.println(rctemp[1].laverspecies);
+					System.out.println(rctemp[1].laver);
+					System.out.println(rctemp[2].laverspecies);
+					System.out.println(rctemp[2].laver);
+					System.out.println(rctemp[3].laverspecies);
+					System.out.println(rctemp[3].laver);
+					/*테스트코드*/
+					
+					rcbefore = mm.RecipeModifier(rctemp);
+					
+					/*테스트코드*/					
 					System.out.println(rcbefore[0].laverspecies);
 					System.out.println(rcbefore[0].laver);
 					System.out.println(rcbefore[1].laverspecies);
@@ -83,6 +98,9 @@ public class Application {
 					break;
 					
 				case "3": break;
+				
+				
+				
 				case "4": break;
 				
 				case "5": System.out.println("프로그램을 종료합니다."); return;

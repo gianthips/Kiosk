@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class MasterMethods {
+	
 	public void RecipeModifyDisplay() {
 		System.out.println("===어떤 메뉴의 재료 구성을 변경하시겠습니까?===");
 		System.out.println("1. 야채김밥");
@@ -20,14 +21,8 @@ public class MasterMethods {
 	
 	public Recipe RecipeMaker(int menuNum) { //Recipe를 리턴하려면 최초에 값 선언을 해줘야 함. 근데 그러면 초기화가 되어 버림. 
 		
-//		int q_menuNum = 0;
 		int q_recipeOn = 0;
-//		int q_modifyContinueNum=0;
-		
-//		int menuNum=0;
-//		String menuName;
-		
-		
+			
 		String laverspecies; String ricespecies; String hamspecies; 
 		/*각 재료의 수량을 일단 String으로 받는다.*/
 		String laverSA; String hamSA; String carrotSA; String spinachSA;
@@ -339,4 +334,200 @@ public class MasterMethods {
 		}		
 		return rcafter;
 	}
+	
+//	price 클래스로 옮긴다.
+//	public Price PriceDataInitial() {
+//		//천원 단위
+//		double laverP=1; double hamP=2; double carrotP=2; double spinachP=3;
+//		double dakuangP=1; double sesameoilP=0.5; double vinegarP=0.3; double sesameP=0.5;
+//		double kimchiP=2; double tunaP=3; double mayoP=2;
+//		
+//		return new Price(laverP, hamP, carrotP, spinachP, dakuangP, sesameoilP, vinegarP, sesameP,
+//				kimchiP, tunaP, mayoP) ;
+//	}
+//	
+//	public Price PriceModifier() {
+//				
+//		String laverSP; String hamSP; String carrotSP; String spinachSP;
+//		String dakuangSP; String sesameoilSP; String vinegarSP; String sesameSP;
+//		String kimchiSP; String tunaSP; String mayoSP;
+//		
+//		double laverP=0; double hamP=0; double carrotP=0; double spinachP=0;
+//		double dakuangP=0; double sesameoilP=0; double vinegarP=0; double sesameP=0;
+//		double kimchiP=0; double tunaP=0; double mayoP=0;
+//		
+//		Scanner sc = new Scanner(System.in);
+//		Checkers ch = new Checkers();
+//		
+//		int q_priceModifierTotal = 0;
+//		int q_priceModifierEach = 0;
+//		
+//		
+//		
+//		while(q_priceModifierTotal==0) {
+//
+//			System.out.println("김의 가격을 입력해주세요.: ");
+//			laverSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(laverSP)) {
+//					laverP = Double.parseDouble(laverSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			System.out.println("햄의 가격을 입력해주세요.: ");
+//			hamSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(hamSP)) {
+//					hamP = Double.parseDouble(hamSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//						
+//			System.out.println("당근의 가격을 입력해주세요.: ");
+//			carrotSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(carrotSP)) {
+//					carrotP = Double.parseDouble(carrotSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			
+//			System.out.println("시금치의 가격을 입력해주세요.: ");
+//			spinachSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(spinachSP)) {
+//					spinachP = Double.parseDouble(spinachSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			
+//			System.out.println("단무지의 가격을 입력해주세요.: ");
+//			dakuangSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(dakuangSP)) {
+//					dakuangP = Double.parseDouble(dakuangSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			System.out.println("참기름의 가격을 입력해주세요.: ");
+//			sesameoilSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(sesameoilSP)) {
+//					sesameoilP = Double.parseDouble(sesameoilSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			System.out.println("식초의 가격을 입력해주세요.: ");
+//			vinegarSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(vinegarSP)) {
+//					vinegarP = Double.parseDouble(vinegarSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			System.out.println("참깨의 가격을 입력해주세요.: ");
+//			sesameSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(sesameSP)) {
+//					sesameP = Double.parseDouble(sesameSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			System.out.println("김치의 가격을 입력해주세요.: ");
+//			kimchiSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(kimchiSP)) {
+//					kimchiP = Double.parseDouble(kimchiSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			System.out.println("참치의 가격을 입력해주세요.: ");
+//			tunaSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(tunaSP)) {
+//					tunaP = Double.parseDouble(tunaSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			System.out.println("마요네즈의 가격을 입력해주세요.: ");
+//			mayoSP = sc.next();
+//			while(q_priceModifierEach==0) {
+//				if(ch.StringNumCheck(mayoSP)) {
+//					mayoP = Double.parseDouble(mayoSP);
+//					q_priceModifierEach=1;
+//				}else {
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach=0;
+//				}					
+//			}
+//			q_priceModifierEach=0;
+//			
+//			while(q_priceModifierEach==0) {
+//				System.out.println("주문을 완료하셨습니까? Y/N" );
+//				String yesOrNo = sc.next();
+//				if(ch.YesNoCheck(yesOrNo)) {
+//					if(yesOrNo.equals("Y")) {
+//						q_priceModifierTotal=1;
+//					}else {
+//						q_priceModifierTotal=0;					
+//					}			
+//					q_priceModifierEach = 1;
+//				}else{
+//					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//					q_priceModifierEach = 0;
+//					q_priceModifierTotal = 0;
+//				}
+//			}		
+//			
+//		}		
+//		return new Price(laverP, hamP, carrotP, spinachP, dakuangP, sesameoilP, vinegarP, sesameP,
+//				kimchiP, tunaP, mayoP) ;
+//	}
+	
+	
 }

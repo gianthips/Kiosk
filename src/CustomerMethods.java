@@ -65,9 +65,9 @@ public class CustomerMethods {
 	
 		while(q_orderFinish==0) {
 			System.out.println("주문을 완료하셨습니까? Y/N" );
-			String orderTablingTemp = sc.next();
-			if(ch.YesNoCheck(orderTablingTemp)) {
-				if(orderTablingTemp.equals("Y")) {
+			String yesOrNo = sc.next();
+			if(ch.YesNoCheck(yesOrNo)) {
+				if(yesOrNo.equals("Y")) {
 					orderFinishNum=1;
 				}else {
 					orderFinishNum=0;					
