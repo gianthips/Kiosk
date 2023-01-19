@@ -38,27 +38,48 @@ public class Application {
 							orderFinishNum = 0;
 						}else {orderFinishNum = 1;}						
 					}					
+							
+					orderTableSave = orderTableTemp.clone();//임시 저장
 					
-					//test
-//					System.out.println(tableTemp[0].orderFinishNum);
-					//
-					orderTableTemp = orderTableTemp.clone();//임시 저장
-					//test
-//					System.out.println(tableTemp[0].menuNum + "," + tableTemp[1].menuNum + "," + tableTemp[2].menuNum);					
-//					System.out.println(tableTemp[0].menuName + "," + tableTemp[1].menuName + "," + tableTemp[2].menuName);					
-					//
+					/*테스트코드*/
+					System.out.println(orderTableSave[0].menuName);
+					System.out.println(orderTableSave[1].menuName);
+					System.out.println(orderTableSave[2].menuName);
+
+					/*테스트코드*/
+					
 					break;
 					
 				case "2":
 
-					int recipeModifyFinishNum = 0;
 					mm.RecipeModifyDisplay();
 					
-					while(recipeModifyFinishNum==0) {
-						Recipe[] rctemp = rcbefore.clone();
-						rcbefore = mm.RecipeModifier(rctemp);
-						
-					}					
+					
+					/*테스트코드*/
+					System.out.println(rcbefore[0].laverspecies);
+					System.out.println(rcbefore[0].laver);
+					System.out.println(rcbefore[1].laverspecies);
+					System.out.println(rcbefore[1].laver);
+					System.out.println(rcbefore[2].laverspecies);
+					System.out.println(rcbefore[2].laver);
+					System.out.println(rcbefore[3].laverspecies);
+					System.out.println(rcbefore[3].laver);
+					/*테스트코드*/
+					
+					Recipe[] rctemp = rcbefore.clone();
+					rcbefore = mm.RecipeModifier(rctemp);
+					
+					/*테스트코드*/
+					System.out.println(rcbefore[0].laverspecies);
+					System.out.println(rcbefore[0].laver);
+					System.out.println(rcbefore[1].laverspecies);
+					System.out.println(rcbefore[1].laver);
+					System.out.println(rcbefore[2].laverspecies);
+					System.out.println(rcbefore[2].laver);
+					System.out.println(rcbefore[3].laverspecies);
+					System.out.println(rcbefore[3].laver);
+					/*테스트코드*/
+					
 					break;
 					
 				case "3": break;

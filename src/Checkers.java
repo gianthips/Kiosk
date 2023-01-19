@@ -23,15 +23,27 @@ public class Checkers {
 		return menuname;
 	}
 	
-	public boolean YesNoCheck(String orderCONT) {//Yes No question에 대한 체크
+	public boolean YesNoCheck(String YesOrNo) {//Yes No question에 대한 체크
 		//CustomerMethods에서 주문을 계속할지에 대한 입력이 제대로 들어왔는지 체크하는데 사용
 		//MasterMethods에서 재료를 넣을지 말지 체크하는데 사용
-		if(orderCONT.equals("Y") || orderCONT.equals("N")){
+		if(YesOrNo.equals("Y") || YesOrNo.equals("N")){
 			return true;
 		}else {return false;}
 	}
 	
-	public continue
+//에러나서 그냥 본문에 녹임
+// public int ContinueCheck(String qCont) {
+//		Checkers ch = new Checkers();
+//		if(ch.YesNoCheck(qCont)) {
+//			if(qCont.equals("Y")) {
+//				int cont = 0;
+//			}else {
+//				int cont = 1;				
+//			}		
+//		}else {
+//			System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+//		}
+//	}
 	
 /*orders*/
 	

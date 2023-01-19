@@ -21,20 +21,22 @@ public class MasterMethods {
 	public Recipe RecipeMaker(int menuNum) { //Recipe를 리턴하려면 최초에 값 선언을 해줘야 함. 근데 그러면 초기화가 되어 버림. 
 		
 //		int q_menuNum = 0;
-		int q_recipeNum = 0;
-		int q_modifyContinueNum=0;
+		int q_recipeOn = 0;
+//		int q_modifyContinueNum=0;
 		
 //		int menuNum=0;
 //		String menuName;
 		
-		String laverspecies; String ricespecies; String hamspecies; 
-		String laverS; String hamS; String carrotS; String spinachS;
-		String dakuangS; String sesameoilS; String vinegarS; String sesameS;
-		String kimchiS; String tunaS; String mayoS;
 		
-		int laver=0; int ham=0; int carrot=0; int spinach=0;
-		int dakuang=0; int sesameoil=0; int vinegar=0; int sesame=0;
-		int kimchi=0; int tuna=0; int mayo=0;
+		String laverspecies; String ricespecies; String hamspecies; 
+		/*각 재료의 수량을 일단 String으로 받는다.*/
+		String laverSA; String hamSA; String carrotSA; String spinachSA;
+		String dakuangSA; String sesameoilSA; String vinegarSA; String sesameSA;
+		String kimchiSA; String tunaSA; String mayoSA;
+		
+		int laverA=0; int hamA=0; int carrotA=0; int spinachA=0;
+		int dakuangA=0; int sesameoilA=0; int vinegarA=0; int sesameA=0;
+		int kimchiA=0; int tunaA=0; int mayoA=0;
 		
 		Scanner sc = new Scanner(System.in);
 		Checkers ch = new Checkers();
@@ -68,223 +70,223 @@ public class MasterMethods {
 		
 		/*재료 on/off 입력*/
 		//김		
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("김을 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			laverS = sc.next();
-			if(ch.YesNoCheck(laverS)) {
-				if(laverS.equals("Y")) {
-					laver = 1;
+			laverSA = sc.next();
+			if(ch.YesNoCheck(laverSA)) {
+				if(laverSA.equals("Y")) {
+					laverA = 1;
 				}else {
-					laver = 0;					
+					laverA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;
+		q_recipeOn = 0;
 		
 		//햄		
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("햄을 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			hamS = sc.next();
-			if(ch.YesNoCheck(hamS)) {
-				if(hamS.equals("Y")) {
-					ham = 1;
+			hamSA = sc.next();
+			if(ch.YesNoCheck(hamSA)) {
+				if(hamSA.equals("Y")) {
+					hamA = 1;
 				}else {
-					ham = 0;					
+					hamA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;
+		q_recipeOn = 0;
 		
 		//당근	
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("당근을 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			carrotS = sc.next();
-			if(ch.YesNoCheck(carrotS)) {
-				if(carrotS.equals("Y")) {
-					carrot = 1;
+			carrotSA = sc.next();
+			if(ch.YesNoCheck(carrotSA)) {
+				if(carrotSA.equals("Y")) {
+					carrotA = 1;
 				}else {
-					carrot = 0;					
+					carrotA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;
+		q_recipeOn = 0;
 		
 		//시금치	
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("시금치를 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			spinachS = sc.next();
-			if(ch.YesNoCheck(spinachS)) {
-				if(spinachS.equals("Y")) {
-					spinach = 1;
+			spinachSA = sc.next();
+			if(ch.YesNoCheck(spinachSA)) {
+				if(spinachSA.equals("Y")) {
+					spinachA = 1;
 				}else {
-					spinach = 0;					
+					spinachA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;
+		q_recipeOn = 0;
 		
 		//단무지
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("단무지를 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			dakuangS = sc.next();
-			if(ch.YesNoCheck(dakuangS)) {
-				if(dakuangS.equals("Y")) {
-					dakuang = 1;
+			dakuangSA = sc.next();
+			if(ch.YesNoCheck(dakuangSA)) {
+				if(dakuangSA.equals("Y")) {
+					dakuangA = 1;
 				}else {
-					dakuang = 0;					
+					dakuangA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;
+		q_recipeOn = 0;
 		
 		//참기름
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("참기름을 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			sesameoilS = sc.next();
-			if(ch.YesNoCheck(sesameoilS)) {
-				if(sesameoilS.equals("Y")) {
-					sesameoil = 1;
+			sesameoilSA = sc.next();
+			if(ch.YesNoCheck(sesameoilSA)) {
+				if(sesameoilSA.equals("Y")) {
+					sesameoilA = 1;
 				}else {
-					sesameoil = 0;					
+					sesameoilA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;
+		q_recipeOn = 0;
 		
 		//식초
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("식초를 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			vinegarS = sc.next();
-			if(ch.YesNoCheck(vinegarS)) {
-				if(vinegarS.equals("Y")) {
-					vinegar = 1;
+			vinegarSA = sc.next();
+			if(ch.YesNoCheck(vinegarSA)) {
+				if(vinegarSA.equals("Y")) {
+					vinegarA = 1;
 				}else {
-					vinegar = 0;					
+					vinegarA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;		
+		q_recipeOn = 0;		
 					
 		//참깨
-		while(q_recipeNum==0) {
+		while(q_recipeOn==0) {
 			System.out.println("참깨를 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			sesameS = sc.next();
-			if(ch.YesNoCheck(sesameS)) {
-				if(sesameS.equals("Y")) {
-					sesame = 1;
+			sesameSA = sc.next();
+			if(ch.YesNoCheck(sesameSA)) {
+				if(sesameSA.equals("Y")) {
+					sesameA = 1;
 				}else {
-					sesame = 0;					
+					sesameA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;	
+		q_recipeOn = 0;	
 				
 		//김치
 		//김치김밥, 김치참치김밥
-		while((menuNum==2||menuNum==4)&&(q_recipeNum==0)) {
+		while((menuNum==2||menuNum==4)&&(q_recipeOn==0)) {
 			System.out.println("김치를 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			kimchiS = sc.next();
-			if(ch.YesNoCheck(kimchiS)) {
-				if(kimchiS.equals("Y")) {
-					kimchi = 1;
+			kimchiSA = sc.next();
+			if(ch.YesNoCheck(kimchiSA)) {
+				if(kimchiSA.equals("Y")) {
+					kimchiA = 1;
 				}else {
-					kimchi = 0;					
+					kimchiA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;	
+		q_recipeOn = 0;	
 		
 		//참치
 		//참치김밥, 김치참치김밥
-		while((menuNum==3||menuNum==4)&&q_recipeNum==0) {
+		while((menuNum==3||menuNum==4)&&q_recipeOn==0) {
 			System.out.println("참치를 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			tunaS = sc.next();
-			if(ch.YesNoCheck(tunaS)) {
-				if(tunaS.equals("Y")) {
-					tuna = 1;
+			tunaSA = sc.next();
+			if(ch.YesNoCheck(tunaSA)) {
+				if(tunaSA.equals("Y")) {
+					tunaA = 1;
 				}else {
-					tuna = 0;					
+					tunaA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;	
+		q_recipeOn = 0;	
 		
 		//마요
 		//참치김밥, 김치참치김밥
-		while((menuNum==3||menuNum==4)&&q_recipeNum==0) {
+		while((menuNum==3||menuNum==4)&&q_recipeOn==0) {
 			System.out.println("마요를 넣을지 여부를 Y 또는 N으로 표현해주세요.: ");
-			mayoS = sc.next();
-			if(ch.YesNoCheck(mayoS)) {
-				if(mayoS.equals("Y")) {
-					mayo = 1;
+			mayoSA = sc.next();
+			if(ch.YesNoCheck(mayoSA)) {
+				if(mayoSA.equals("Y")) {
+					mayoA = 1;
 				}else {
-					mayo = 0;					
+					mayoA = 0;					
 				}
-				q_recipeNum = 1;
+				q_recipeOn = 1;
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_recipeNum = 0;
+				q_recipeOn = 0;
 			}			
 		}
-		q_recipeNum = 0;	
+		q_recipeOn = 0;	
 					
 		if(menuNum==1) {
-			return new Recipe(laverspecies, ricespecies, hamspecies, laver, ham, carrot,
-					spinach, dakuang, sesameoil, vinegar, sesame);
+			return new Recipe(laverspecies, ricespecies, hamspecies, laverA, hamA, carrotA,
+					spinachA, dakuangA, sesameoilA, vinegarA, sesameA);
 		}else if(menuNum==2) {
-			return new Recipe(laverspecies, ricespecies, hamspecies, laver, ham, carrot,
-					spinach, dakuang, sesameoil, vinegar, sesame, kimchi);
+			return new Recipe(laverspecies, ricespecies, hamspecies, laverA, hamA, carrotA,
+					spinachA, dakuangA, sesameoilA, vinegarA, sesameA, kimchiA);
 		}else if(menuNum==3) {
-			return new Recipe(laverspecies, ricespecies, hamspecies, laver, ham, carrot,
-					spinach, dakuang, sesameoil, vinegar, sesame, tuna, mayo);
+			return new Recipe(laverspecies, ricespecies, hamspecies, laverA, hamA, carrotA,
+					spinachA, dakuangA, sesameoilA, vinegarA, sesameA, tunaA, mayoA);
 		}else {
-			return new Recipe(laverspecies, ricespecies, hamspecies, laver, ham, carrot,
-					spinach, dakuang, sesameoil, vinegar, sesame, kimchi, tuna,	mayo);
+			return new Recipe(laverspecies, ricespecies, hamspecies, laverA, hamA, carrotA,
+					spinachA, dakuangA, sesameoilA, vinegarA, sesameA, kimchiA, tunaA,	mayoA);
 		}
 	}
 	public Recipe[] RecipeModifier(Recipe[] rcbefore) {
 		
-		int q_menuNum = 0;
+		int q_recipeModify = 0;
 		int menuNum = 0;
 		String menuName = "";
 				
@@ -294,7 +296,7 @@ public class MasterMethods {
 		Checkers ch = new Checkers();
 		MasterMethods mm = new MasterMethods();
 		
-		while(q_menuNum == 0) {
+		while(q_recipeModify == 0) {
 		System.out.println("변경할 메뉴 번호: ");
 		String menuNumTemp = sc.next();
 		
@@ -304,20 +306,36 @@ public class MasterMethods {
 				System.out.println(menuName + "의 재료 구성을 변경합니다.");
 								
 				if(menuNum==1) {
-					rcafter[menuNum] = mm.RecipeMaker(menuNum);
+					rcafter[menuNum-1] = mm.RecipeMaker(menuNum);//array 사이즈 맞춰야 함.
 				}else if(menuNum==2) {
-					rcafter[menuNum] = mm.RecipeMaker(menuNum);					
+					rcafter[menuNum-1] = mm.RecipeMaker(menuNum);					
 				}else if(menuNum==3) {
-					rcafter[menuNum] = mm.RecipeMaker(menuNum);					
+					rcafter[menuNum-1] = mm.RecipeMaker(menuNum);					
 				}else {
-					rcafter[menuNum] = mm.RecipeMaker(menuNum);					
-				}							
-						
-				q_menuNum = 1;
+					rcafter[menuNum-1] = mm.RecipeMaker(menuNum);					
+				}
+
+				int q_yesOrNo=0;
+				
+				while(q_yesOrNo==0) {
+					System.out.println("재료 구성 변경을 완료하셨습니까? Y/N" );
+					String orderTablingTemp = sc.next();
+					if(ch.YesNoCheck(orderTablingTemp)) {
+						if(orderTablingTemp.equals("Y")) {
+							q_recipeModify=1;
+						}else {
+							q_recipeModify=0;					
+						}			
+						q_yesOrNo = 1;
+					}else{
+						System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
+						q_yesOrNo=0;
+					}
+				}
 			}else {
 				System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
-				q_menuNum = 0;
-			}	
+				q_recipeModify = 0;
+			}
 		}		
 		return rcafter;
 	}

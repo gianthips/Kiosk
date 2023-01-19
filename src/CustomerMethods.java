@@ -99,20 +99,7 @@ public class CustomerMethods {
 		}
 		
 		return newtable;	
-		
-//		//깊은 복사
-//		if(i==0) {			
-//			newtable = new Orders[1];
-//			newtable[0] = newOrder;		
-//		}else {
-//			newtable = new Orders[i+1];			
-//			for(int j=0;j<i;j++) {
-//			newtable[j]=table[j];	
-//			}			
-//			newtable[i] = newOrder;			
-//		}		
-//		return newtable;		
-				
+
 	}	
 }
 	
