@@ -8,6 +8,14 @@ public class Checkers {
 		}else {return false;}		
 	}
 	
+	public boolean modiNumCheck(String modiNum) { //변경 재료 번호가 제대로 들어왔는지 체크
+		if(modiNum.equals("1") || modiNum.equals("2") | modiNum.equals("3") | modiNum.equals("4") |
+			modiNum.equals("5") || modiNum.equals("6") | modiNum.equals("7") | modiNum.equals("8") |
+			modiNum.equals("9") || modiNum.equals("10") | modiNum.equals("11") | modiNum.equals("12")) {
+			return true;
+		}else {return false;}		
+	}
+	
 	public String orderClassification(int menuNum) {//입력된 메뉴 번호를 확인하여 메뉴 이름을 리턴
 		String menuname;
 

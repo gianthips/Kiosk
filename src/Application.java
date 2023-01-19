@@ -19,9 +19,10 @@ public class Application {
 			System.out.println("====================");
 			System.out.println("1. 메뉴 제시 및 주문 받기");
 			System.out.println("2. 김밥 재료 구성");
-			System.out.println("3. 재료 계산");
-			System.out.println("4. 매상 계산");
-			System.out.println("5. 시스템 종료");
+			System.out.println("3. 재료 가격 설정");
+			System.out.println("4. 주문 원가 계산");
+			System.out.println("5. 매상 계산");
+			System.out.println("6. 시스템 종료");
 			System.out.println("====================");
 			System.out.println("");
 						
@@ -98,15 +99,24 @@ public class Application {
 					break;
 					
 				case "3": 
+					/*테스트코드*/
+					System.out.println(pricebefore.laverP + "," + pricebefore.carrotP);
+					/*테스트코드*/
 					
 					Price pricetemp = new Price(pricebefore);
-					pricebefore = mm.PriceModifier(pricetemp);			
+					pricebefore = mm.PriceModifier(pricetemp);
+					
+
+					/*테스트코드*/
+					System.out.println(pricetemp.laverP + "," + pricetemp.carrotP);
+					System.out.println(pricebefore.laverP + "," + pricebefore.carrotP);
+					/*테스트코드*/
 					
 					break;			
 				
 				case "4": break;
-				
-				case "5": System.out.println("프로그램을 종료합니다."); return;
+				case "5": break;
+				case "6": System.out.println("프로그램을 종료합니다."); return;
 				default : System.out.println("잘못된 번호를 선택하셨습니다."); break;
 			}
 			
