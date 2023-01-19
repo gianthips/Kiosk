@@ -6,12 +6,15 @@ public class CustomerMethods {
 	
 	public void menuNotice() {    
 		
-		System.out.println("====메뉴====");
+
+		System.out.println("====================");
+		System.out.println("****메뉴****");
 		System.out.println("1. 야채김밥");
 		System.out.println("2. 참치김밥");
 		System.out.println("3. 김치김밥");
 		System.out.println("4. 참치김치김밥");
 		System.out.println("우리는 카드만 받습니다!^^");
+		System.out.println("====================");
 		System.out.println("");
 		
 	}
@@ -50,7 +53,7 @@ public class CustomerMethods {
 		while(q_orderNum == 0) {
 			System.out.println("몇 개를 구매하시겠습니까?: ");
 			String orderNumTemp = sc.next();
-			if(ch.orderNumCheck(orderNumTemp)) {
+			if(ch.StringNumCheck(orderNumTemp)) {
 				orderNum = Integer.parseInt(orderNumTemp);
 				System.out.println(orderNum + "개를 주문합니다.");
 				q_orderNum = 1;
@@ -63,7 +66,7 @@ public class CustomerMethods {
 		while(q_orderFinish==0) {
 			System.out.println("주문을 완료하셨습니까? Y/N" );
 			String orderTablingTemp = sc.next();
-			if(ch.orderContinueCheck(orderTablingTemp)) {
+			if(ch.YesNoCheck(orderTablingTemp)) {
 				if(orderTablingTemp.equals("Y")) {
 					orderFinishNum=1;
 				}else {
