@@ -608,5 +608,58 @@ public class MasterMethods {
 		}
 		
 		return new Price(pricetemp);
-	}	
+	}
+	
+
+	public double[] MenuCost(Recipe[] rcbefore, Price pricebefore) {
+		
+		double[] totalC = new double[4];
+		
+		for (int i = 0; i<4; i++) {
+			double laverC = rcbefore[i].laver * pricebefore.laverP;
+			double hamC = rcbefore[i].laver * pricebefore.hamP;
+			double carrotC = rcbefore[i].laver * pricebefore.carrotP;
+			double spinachC = rcbefore[i].laver * pricebefore.spinachP;
+			double dakuangC = rcbefore[i].laver * pricebefore.dakuangP;
+			double sesameoilC = rcbefore[i].laver * pricebefore.sesameoilP;
+			double vinegarC = rcbefore[i].laver * pricebefore.vinegarP;
+			double sesameC = rcbefore[i].laver * pricebefore.sesameP;
+			double kimchiC = rcbefore[i].laver * pricebefore.kimchiP;
+			double tunaC = rcbefore[i].laver * pricebefore.tunaP;
+			double mayoC = rcbefore[i].laver * pricebefore.mayoP;
+				
+			totalC[i] = laverC + hamC + carrotC + spinachC + dakuangC +
+					sesameoilC + vinegarC + sesameC + kimchiC + tunaC + mayoC;
+		}		
+		return totalC;
+	}
+	
+	public double TotalCost(Orders[] table, double[] totalC ) {
+		int i = table.length;//merge 따로 만들어줘야
+		double[] menuC = new double[i];
+		
+		for(int j=0; j<i; j++) {
+			switch(table[j].menuNum) {
+			case 1:
+				menuC[j]=totalC[1]*table[j].orderNum;
+				break;
+			case 2:
+				menuC[j]=totalC[2]*table[j].orderNum;				
+				break;
+			case 3:
+				menuC[j]=totalC[3]*table[j].orderNum;				
+				break;
+			case 4:
+				menuC[j]=totalC[4]*table[j].orderNum;				
+				break;
+			default:
+				System.out.println("오류");
+				return;
+			}
+		}
+		double totalcost = 
+	}
+	
 }
+
+
