@@ -45,11 +45,11 @@ public class Application {
 							
 					orderTableSave = orderTableTemp.clone();//임시 저장
 					
-					/*테스트코드*/
-					System.out.println(orderTableSave[0].menuName);
-					System.out.println(orderTableSave[1].menuName);
-					System.out.println(orderTableSave[2].menuName);
-					/*테스트코드*/
+//					/*테스트코드*/
+//					System.out.println(orderTableSave[0].menuName);
+//					System.out.println(orderTableSave[1].menuName);
+//					System.out.println(orderTableSave[2].menuName);
+//					/*테스트코드*/
 					
 					break;
 					
@@ -58,48 +58,51 @@ public class Application {
 					mm.RecipeModifyDisplay();
 					
 					
-					/*테스트코드*/
-					System.out.println(rcbefore[0].laverspecies);
-					System.out.println(rcbefore[0].laver);
-					System.out.println(rcbefore[1].laverspecies);
-					System.out.println(rcbefore[1].laver);
-					System.out.println(rcbefore[2].laverspecies);
-					System.out.println(rcbefore[2].laver);
-					System.out.println(rcbefore[3].laverspecies);
-					System.out.println(rcbefore[3].laver);
-					/*테스트코드*/
+//					/*테스트코드*/
+//					System.out.println(rcbefore[0].laverspecies);
+//					System.out.println(rcbefore[0].laver);
+//					System.out.println(rcbefore[1].laverspecies);
+//					System.out.println(rcbefore[1].laver);
+//					System.out.println(rcbefore[2].laverspecies);
+//					System.out.println(rcbefore[2].laver);
+//					System.out.println(rcbefore[3].laverspecies);
+//					System.out.println(rcbefore[3].laver);
+//					/*테스트코드*/
 					
 					Recipe[] rctemp = rcbefore.clone();
 					
-					/*테스트코드*/
-					System.out.println(rctemp[0].laverspecies);
-					System.out.println(rctemp[0].laver);
-					System.out.println(rctemp[1].laverspecies);
-					System.out.println(rctemp[1].laver);
-					System.out.println(rctemp[2].laverspecies);
-					System.out.println(rctemp[2].laver);
-					System.out.println(rctemp[3].laverspecies);
-					System.out.println(rctemp[3].laver);
-					/*테스트코드*/
+//					/*테스트코드*/
+//					System.out.println(rctemp[0].laverspecies);
+//					System.out.println(rctemp[0].laver);
+//					System.out.println(rctemp[1].laverspecies);
+//					System.out.println(rctemp[1].laver);
+//					System.out.println(rctemp[2].laverspecies);
+//					System.out.println(rctemp[2].laver);
+//					System.out.println(rctemp[3].laverspecies);
+//					System.out.println(rctemp[3].laver);
+//					/*테스트코드*/
 					
 					rcbefore = mm.RecipeModifier(rctemp);
 					
-					/*테스트코드*/					
-					System.out.println(rcbefore[0].laverspecies);
-					System.out.println(rcbefore[0].laver);
-					System.out.println(rcbefore[1].laverspecies);
-					System.out.println(rcbefore[1].laver);
-					System.out.println(rcbefore[2].laverspecies);
-					System.out.println(rcbefore[2].laver);
-					System.out.println(rcbefore[3].laverspecies);
-					System.out.println(rcbefore[3].laver);
-					/*테스트코드*/
+//					/*테스트코드*/					
+//					System.out.println(rcbefore[0].laverspecies);
+//					System.out.println(rcbefore[0].laver);
+//					System.out.println(rcbefore[1].laverspecies);
+//					System.out.println(rcbefore[1].laver);
+//					System.out.println(rcbefore[2].laverspecies);
+//					System.out.println(rcbefore[2].laver);
+//					System.out.println(rcbefore[3].laverspecies);
+//					System.out.println(rcbefore[3].laver);
+//					/*테스트코드*/
 					
 					break;
 					
-				case "3": break;
-				
-				
+				case "3": 
+					
+					Price pricetemp = new Price(pricebefore);
+					pricebefore = mm.PriceModifier(pricetemp);			
+					
+					break;			
 				
 				case "4": break;
 				

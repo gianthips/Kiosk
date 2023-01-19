@@ -55,4 +55,5 @@ public class Price {
 		this.tunaP = tunaP;
 		this.mayoP = mayoP;
 	}
+	
 }
