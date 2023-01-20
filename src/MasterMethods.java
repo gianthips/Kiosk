@@ -635,29 +635,34 @@ public class MasterMethods {
 	}
 	
 	public double TotalCost(Orders[] table, double[] totalC ) {
-		int i = table.length;//merge 따로 만들어줘야
+		int i = table.length;//merge는 따로 만들어줘야
 		double[] menuC = new double[i];
+		double totalcost=0;
 		
 		for(int j=0; j<i; j++) {
 			switch(table[j].menuNum) {
 			case 1:
 				menuC[j]=totalC[1]*table[j].orderNum;
+				totalcost = totalcost+menuC[j];
 				break;
 			case 2:
-				menuC[j]=totalC[2]*table[j].orderNum;				
+				menuC[j]=totalC[2]*table[j].orderNum;	
+				totalcost = totalcost+menuC[j];			
 				break;
 			case 3:
-				menuC[j]=totalC[3]*table[j].orderNum;				
+				menuC[j]=totalC[3]*table[j].orderNum;
+				totalcost = totalcost+menuC[j];				
 				break;
 			case 4:
-				menuC[j]=totalC[4]*table[j].orderNum;				
+				menuC[j]=totalC[4]*table[j].orderNum;	
+				totalcost = totalcost+menuC[j];			
 				break;
 			default:
 				System.out.println("오류");
-				return;
+				break;
 			}
 		}
-		double totalcost = 
+		return totalcost;
 	}
 	
 }
