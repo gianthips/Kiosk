@@ -377,19 +377,44 @@ public class MasterMethods {
 			System.out.println("====================");
 			System.out.println("");			
 			
-			String modiMenuNum = sc.next();	
+			String modiMenuNumS = sc.next();
+			int modiMenuNumI = 0;
 			
 			int q_modiMenuNum = 0;
 			while(q_modiMenuNum==0) {
-				if(ch.modiNumCheck(modiMenuNum)) {
+				if(ch.modiNumCheck(modiMenuNumS)) {
 					q_modiMenuNum = 1;
 				}else {
 					System.out.println("잘못 입력하셨습니다. 다시 입력하세요.");
 					q_modiMenuNum = 0;
 				}
-			}//한번체크해주고
+			}
+			modiMenuNumI = Integer.parseInt(modiMenuNumS);
+			//한번체크해주고
 			
-			switch(modiMenuNum) {
+			//////////
+			String[] ingrediant = {"김","햄","당근","시금치","단무지",
+									"참기름","식초","참깨","김치","참치",
+									"마요네즈"};
+			String[] SP = {"laverSP","hamSP","carrotSP","spinachSP","dakuangSP",
+							"sesameoilSP", "vinegarSP", "sesameSP", "kimchiSP","tunaSP",
+							"mayoSP"};
+			String[] P = {"laverP","hamP","carrotP","spinachP","dakuangP",
+							"sesameoilP", "vinegarP", "sesameP", "kimchiP", "tunaP",
+							"mayoP"};
+						
+			q_priceModifierEach=0;
+			while(q_priceModifierEach==0) {
+				System.out.println(ingrediant[modiMenuNumI-1] + "의 가격을 입력해주세요.");
+				
+			}		
+			//////////
+			
+			
+			
+			
+			
+			switch(modiMenuNumS) {
 			case "1":
 				q_priceModifierEach=0;
 //				//테스트
@@ -589,7 +614,7 @@ public class MasterMethods {
 				
 			}
 				q_priceModifierEach=0;
-				while((!modiMenuNum.equals("12")) && q_priceModifierEach==0) {
+				while((!modiMenuNumS.equals("12")) && q_priceModifierEach==0) {
 					System.out.println("추가로 다른 재료의 가격 변경을 원하십니까? Y/N" );
 					String yesOrNo = sc.next();
 					if(ch.YesNoCheck(yesOrNo)) {
@@ -613,7 +638,7 @@ public class MasterMethods {
 
 	public double[] MenuCost(Recipe[] rcbefore, Price pricebefore) {
 		
-		double[] totalC = new double[4];
+		double[] menuCost = new double[4];
 		
 		for (int i = 0; i<4; i++) {
 			double laverC = rcbefore[i].laver * pricebefore.laverP;
@@ -628,34 +653,34 @@ public class MasterMethods {
 			double tunaC = rcbefore[i].laver * pricebefore.tunaP;
 			double mayoC = rcbefore[i].laver * pricebefore.mayoP;
 				
-			totalC[i] = laverC + hamC + carrotC + spinachC + dakuangC +
+			menuCost[i] = laverC + hamC + carrotC + spinachC + dakuangC +
 					sesameoilC + vinegarC + sesameC + kimchiC + tunaC + mayoC;
 		}		
-		return totalC;
+		return menuCost;
 	}
 	
 	public double TotalCost(Orders[] table, double[] totalC ) {
 		int i = table.length;//merge는 따로 만들어줘야
-		double[] menuC = new double[i];
+		double[] orderCost = new double[i];
 		double totalcost=0;
 		
 		for(int j=0; j<i; j++) {
 			switch(table[j].menuNum) {
 			case 1:
-				menuC[j]=totalC[1]*table[j].orderNum;
-				totalcost = totalcost+menuC[j];
+				orderCost[j]=totalC[1]*table[j].orderNum;
+				totalcost = totalcost+orderCost[j];
 				break;
 			case 2:
-				menuC[j]=totalC[2]*table[j].orderNum;	
-				totalcost = totalcost+menuC[j];			
+				orderCost[j]=totalC[2]*table[j].orderNum;	
+				totalcost = totalcost+orderCost[j];			
 				break;
 			case 3:
-				menuC[j]=totalC[3]*table[j].orderNum;
-				totalcost = totalcost+menuC[j];				
+				orderCost[j]=totalC[3]*table[j].orderNum;
+				totalcost = totalcost+orderCost[j];				
 				break;
 			case 4:
-				menuC[j]=totalC[4]*table[j].orderNum;	
-				totalcost = totalcost+menuC[j];			
+				orderCost[j]=totalC[4]*table[j].orderNum;	
+				totalcost = totalcost+orderCost[j];			
 				break;
 			default:
 				System.out.println("오류");

@@ -6,6 +6,7 @@ public class Application {
 		
 		Orders[] orderTableTemp = {};
 		Orders[] orderTableSave = {};
+		double[] menuCost= new double[4];
 		
 		MasterMethods mm = new MasterMethods();
 		
@@ -14,6 +15,8 @@ public class Application {
 		
 		Price priceinit = new Price(); // 가격 초기화
 		Price pricebefore = new Price(priceinit);//복사생성자를 만들어 변경전 가격으로 저장해둠.		
+		
+		double totalCost;
 		
 		while(true) {
 			System.out.println("====================");
@@ -113,7 +116,26 @@ public class Application {
 					
 					break;			
 				
-				case "4": break;
+				case "4": 
+					
+					/*테스트코드*/
+					System.out.println("rcbefore[0].carrot: " + rcbefore[0].carrot);
+					System.out.println("pricebefore.carrotP: " + pricebefore.carrotP);
+					/*테스트코드*/
+					
+					menuCost = mm.MenuCost(rcbefore, pricebefore);
+					totalCost = mm.TotalCost(orderTableSave, menuCost);					
+					
+					
+					/*테스트코드*/
+					System.out.println("orderTableSave[0].menuName" + orderTableSave[0].menuName);
+					System.out.println("menuCost" + menuCost[0]);
+					/*테스트코드*/
+					
+					
+					System.out.println("현재 주문을 처리하기 위한 재료 비용은 " + totalCost + "입니다." );
+					break;
+					
 				case "5": break;
 				case "6": System.out.println("프로그램을 종료합니다."); return;
 				default : System.out.println("잘못된 번호를 선택하셨습니다."); break;
